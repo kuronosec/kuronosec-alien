@@ -1,0 +1,14 @@
+{
+  "name": "kuronosec-alien",
+  "version": "0.1.0",
+  "author": "kurono",
+  "summary": "Installs ALICE AliEn Grid midleware, site head and worker nodes.",
+  "license": "GNU GENERAL PUBLIC LICENSE Version 2",
+  "source": "https://github.com/kuronosec/kuronosec-alien",
+  "project_page": "https://github.com/kuronosec/kuronosec-alien",
+  "issues_url": "https://github.com/kuronosec/kuronosec-alien",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
