@@ -51,7 +51,7 @@ class alien (
     group { 'alien_group':
         name   => $group_name,
         ensure => present,
-        gid    => $groupd_gid,
+        gid    => $group_gid,
     }
 
     user { 'alien_user':
