@@ -43,7 +43,8 @@ class alien (
       $user_home      = $alien::params::user_home,
       $service_ensure = $alien::params::service_ensure,
       $service_enable = $alien::params::service_enable,
-      $service_name   = $alien::params::service_name
+      $service_name   = $alien::params::service_name,
+      $alien_version  = $alien::params::alien_version
     ) inherits alien::params {
 
     # AliEn user and group
@@ -54,7 +55,7 @@ class alien (
     }
 
     user { 'alien_user':
-        name       => $user_name',
+        name       => $user_name,
         ensure     => present,
         uid        => $user_uid,
         managehome => true,

@@ -12,7 +12,7 @@ class alien::head::config inherits alien {
     # AliEn configuration
     file { "$user_home/.alien":
         ensure => directory,
-        owner  => $user_name',
+        owner  => $user_name,
         group  => $group_name,
         mode   => '0755',
     } ->
@@ -30,7 +30,7 @@ class alien::head::config inherits alien {
     } ->
     file { "$user_home/.alien/etc/aliend/ALICE":
         ensure => directory,
-        owner  => $user_name',
+        owner  => $user_name,
         group  => $group_name,
         mode   => '0755',
     }
@@ -44,7 +44,7 @@ class alien::head::config inherits alien {
     }
 
     file { "$user_home/.alien/etc/aliend/ALICE/startup.conf":
-        owner   => $user_name',
+        owner   => $user_name,
         group   => $group_name,
         mode    => '0644',
         content => "AliEnUser=$user_name\nAliEnServices=\"Monitor CE CMreport MonaLisa\"\n",
@@ -52,7 +52,7 @@ class alien::head::config inherits alien {
     }
 
     file { "$user_home/.alien/alice.conf":
-        owner   => $user_name',
+        owner   => $user_name,
         group   => $group_name,
         mode    => '0644',
         content => "CLUSTERMONITOR_ADDRESS http://${custom_server_fqdn_ext}\nCLUSTERMONITOR_SOAPTYPE httpd\nJOB_MANAGER_ADDRESS https://aliendb8.cern.ch:8083\n",
@@ -60,7 +60,7 @@ class alien::head::config inherits alien {
     }
 
     file { "$user_home/.alien/Environment":
-        owner   => $user_name',
+        owner   => $user_name,
         group   => $group_name,
         mode    => '0644',
         content => "export ALIEN_USER=$user_name\nexport ALIEN_DOMAIN=iri.uni-frankfurt.de\nexport ALIEN_WORKDIR=$user_home/.alien/tmp\n",
