@@ -9,6 +9,6 @@ class alien::params {
     $service_ensure = 'running'
     $service_enable = 'true'
     $service_name   = 'alien_middleware'
-    $alien_version  = 'v2-19.300'
+    $alien_version  = 'v2-19'
 }
 
