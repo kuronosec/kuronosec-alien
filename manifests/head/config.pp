@@ -6,7 +6,7 @@ class alien::head::config inherits alien {
         owner   => $user_name,
         group   => $group_name,
         mode    => '0700',
-        require => [ User['aliprod_user'], Group['aliprod_group'] ],
+        require => [ User['alien_user'], Group['alien_group'] ],
     }
 
     # AliEn configuration
@@ -67,15 +67,15 @@ class alien::head::config inherits alien {
         require => File["$user_home/.alien"],
     }
 
-    file_line { 'aliprod_alien_path':
+    file_line { 'alien_path':
         path    => "$user_home/.bashrc",
         line    => 'export PATH="$HOME/alien/bin:$PATH"',
-        require => User['aliprod_user'],
+        require => User['alien_user'],
     }
 
-    file_line { 'aliprod_alien_lang':
+    file_line { 'alien_lang':
         path    => "$user_home/.bashrc",
         line    => 'export LANG=C',
-        require => User['aliprod_user'],
+        require => User['alien_user'],
     }
 }
