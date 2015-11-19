@@ -67,10 +67,28 @@ class alien::head::config inherits alien {
         require => File["$user_home/.alien"],
     }
 
-    file_line { 'alien_path':
-        path    => "$user_home/.bashrc",
-        line    => 'export PATH="$HOME/alien/bin:$PATH"',
-        require => User['alien_user'],
+        if $service_manage == true {
+        service { 'alien_middleware':
+          ensure     => $service_ensure,
+          enable     => $service_enable,
+          name       => $service_name,
+          hasstatus  => true,
+          hasrestart => true,
+        }
+    }
+
+    if $use_cvmfs == true {
+        file_line { 'alien_path':
+            path    => "$user_home/.bashrc",
+            line    => 'export PATH="/cvmfs/alice.cern.ch/bin:$PATH"',
+            require => User['alien_user'],
+        }
+    } else {
+        file_line { 'alien_path':
+            path    => "$user_home/.bashrc",
+            line    => 'export PATH="$HOME/alien/bin:$PATH"',
+            require => User['alien_user'],
+        }
     }
 
     file_line { 'alien_lang':

@@ -1,6 +1,7 @@
 class alien::params {
 
     # alien user and group
+    $use_cvmfs      = true
     $user_name      = 'aliprod'
     $group_name     = 'aliprod'
     $user_uid       = 355
