@@ -36,6 +36,7 @@
 # Copyright 2015 Your name here, unless otherwise noted.
 #
 class alien (
+      $use_cvmfs      = $alien::params::use_cvmfs,
       $user_name      = $alien::params::user_name,
       $group_name     = $alien::params::group_name,
       $user_uid       = $alien::params::user_uid,
