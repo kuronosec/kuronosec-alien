@@ -36,16 +36,19 @@
 # Copyright 2015 Your name here, unless otherwise noted.
 #
 class alien (
-      $use_cvmfs      = $alien::params::use_cvmfs,
-      $user_name      = $alien::params::user_name,
-      $group_name     = $alien::params::group_name,
-      $user_uid       = $alien::params::user_uid,
-      $group_gid      = $alien::params::group_gid,
-      $user_home      = $alien::params::user_home,
-      $service_ensure = $alien::params::service_ensure,
-      $service_enable = $alien::params::service_enable,
-      $service_name   = $alien::params::service_name,
-      $alien_version  = $alien::params::alien_version
+      $cluster_monitor = $alien::params::cluster_monitor,
+      $user_cert_name  = $alien::params::user_cert_name,
+      $alien_domain    = $alien::params::alien_domain,
+      $use_cvmfs       = $alien::params::use_cvmfs,
+      $user_name       = $alien::params::user_name,
+      $group_name      = $alien::params::group_name,
+      $user_uid        = $alien::params::user_uid,
+      $group_gid       = $alien::params::group_gid,
+      $user_home       = $alien::params::user_home,
+      $service_ensure  = $alien::params::service_ensure,
+      $service_enable  = $alien::params::service_enable,
+      $service_name    = $alien::params::service_name,
+      $alien_version   = $alien::params::alien_version
     ) inherits alien::params {
 
     # AliEn user and group

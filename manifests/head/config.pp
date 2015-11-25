@@ -55,7 +55,7 @@ class alien::head::config inherits alien {
         owner   => $user_name,
         group   => $group_name,
         mode    => '0644',
-        content => "CLUSTERMONITOR_ADDRESS http://${custom_server_fqdn_ext}\nCLUSTERMONITOR_SOAPTYPE httpd\nJOB_MANAGER_ADDRESS https://aliendb8.cern.ch:8083\n",
+        content => "CLUSTERMONITOR_ADDRESS http://${cluster_monitor}\nCLUSTERMONITOR_SOAPTYPE httpd\nJOB_MANAGER_ADDRESS https://aliendb8.cern.ch:8083\n",
         require => File["$user_home/.alien"],
     }
 
@@ -63,7 +63,7 @@ class alien::head::config inherits alien {
         owner   => $user_name,
         group   => $group_name,
         mode    => '0644',
-        content => "export ALIEN_USER=$user_name\nexport ALIEN_DOMAIN=iri.uni-frankfurt.de\nexport ALIEN_WORKDIR=$user_home/.alien/tmp\n",
+        content => "export ALIEN_USER=$user_cert_name\nexport ALIEN_DOMAIN=$alien_domain\nexport ALIEN_WORKDIR=$user_home/.alien/tmp\n",
         require => File["$user_home/.alien"],
     }
 
