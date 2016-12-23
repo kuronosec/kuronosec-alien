@@ -13,5 +13,7 @@ class alien::params {
     $service_enable  = 'true'
     $service_name    = 'alien_middleware'
     $alien_version   = 'v2-19'
+    $mount_server    = '127.0.0.1'
+    $mount_port      = 2049
 }
 
