@@ -48,7 +48,8 @@ class alien (
       $service_ensure  = $alien::params::service_ensure,
       $service_enable  = $alien::params::service_enable,
       $service_name    = $alien::params::service_name,
-      $alien_version   = $alien::params::alien_version
+      $alien_version   = $alien::params::alien_version,
+      $mount_server    = $alien::params::mount_server
     ) inherits alien::params {
 
     # AliEn user and group
