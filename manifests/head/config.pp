@@ -63,7 +63,7 @@ class alien::head::config inherits alien {
         owner   => $user_name,
         group   => $group_name,
         mode    => '0644',
-        content => "export ALIEN_USER=$user_cert_name\nexport ALIEN_DOMAIN=$alien_domain\nexport ALIEN_WORKDIR=$user_home/.alien/tmp\nexport ALIEN_VERSION=v2-19-223\n",
+        content => "export ALIEN_USER=$user_cert_name\nexport ALIEN_DOMAIN=$alien_domain\nexport ALIEN_WORKDIR=$user_home/.alien/tmp\nexport ALIEN_VERSION=v2-19-395\n",
         require => File["$user_home/.alien"],
     }
 
